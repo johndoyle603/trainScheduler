@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trainy trains!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js/> <script type="text/javascript"
+        src="main.js">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Trainy trains</h1>
+            <p class="lead">Don't miss the train!</p>
+        </div>
+    </div>
+
+    <h3 class="m-3">Here's the schedule:</h3>
+    <br>
+
+    <!-- Set up table for displaying info from Firebase -->
+
+    <table class="table table-dark" id="trainSchedule">
+        <thead>
+            <tr>
+                <th scope="col">Train: </th>
+                <th scope="col">Destination: </th>
+                <th scope="col">Frequency: </th>
+                <th scope="col">Next train: </th>
+                <th scope="col">Time remaining: </th>
+            </tr>
+        </thead>
+
+        <!-- Make area of table to accept input from Firebase -->
+
+        <tbody id="trainList">
+
+        </tbody>
+
+    </table>
+    <h3 class="m-3">Add train: </h3>
+    <br>
+
+    <!-- Make area for input from user, using Bootstrap -->
+
+    <div class="input">
+
+        <form>
+
+            <!-- Form fields go here -->
+            <div class="formGroup">
+                <label for="formGroupExampleInput">Train Name</label>
+                <input type="text" class="formControl" id="name" placeholder="exampleInput">
+            </div>
+            <div class="formGroup">
+                <label for="formGroupExampleInput">Destination</label>
+                <input type="text" class="formControl" id="destination" placeholder="exampleInput">
+            </div>
+            <div class="formGroup">
+                <label for="formGroupExampleInput">First train time</label>
+                <input type="text" class="formControl" id="firstTrain" placeholder="exampleInput">
+            </div>
+            <div class="formGroup">
+                <label for="formGroupExampleInput">Frequency in minutes</label>
+                <input type="text" class="formControl" id="frequency" placeholder="exampleInput">
+            </div>
+
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
