@@ -1,13 +1,15 @@
-let config = {
-    apiKey: "AIzaSyAbrLagLUO1QtFbGd7R9O8aOk2-MkPZFfo",
-    authDomain: "trainytrains.firebaseapp.com",
-    databaseURL: "https://trainytrains.firebaseio.com",
-    storageBucket: "trainytrains.appspot.com",
-};
-
-firebase.initializeApp(config);
-
-let database = firebase.database;
+if (!firebase.apps.length) {
+    let config = {
+        apiKey: "AIzaSyAbrLagLUO1QtFbGd7R9O8aOk2-MkPZFfo",
+        authDomain: "trainytrains.firebaseapp.com",
+        databaseURL: "https://trainytrains.firebaseio.com",
+        storageBucket: "trainytrains.appspot.com",
+    };
+    
+        firebase.initializeApp(config);
+        
+    }
+    database = firebase.database();
 
 // Fill Firebase with initial data when button is clicked
 
