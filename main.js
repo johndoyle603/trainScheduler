@@ -14,7 +14,7 @@
 
 $("#addTrain").on("click", function (event) {
     event.preventDefault();
-    // Get user input from fields and assign to variables -- once the button's pressed, of course
+    // Get user input from fields and assign to variables -- once the button's pressed
     let trainName = $("#name")
         .val().trim();
     let destination = $("#destination")
@@ -96,7 +96,7 @@ console.log("tArrival: " + tArrival);
 
 // Add each peice of data to appropriate column on table
 
-$('#train-list').append(`
+$('#trainList').append(`
 <tr>
 <th scope="row"> ${snapName}</th>
 <td>${snapDestination}</td>
