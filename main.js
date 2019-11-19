@@ -1,4 +1,4 @@
-if (!firebase.apps.length) {
+
     let config = {
         apiKey: "AIzaSyAbrLagLUO1QtFbGd7R9O8aOk2-MkPZFfo",
         authDomain: "trainytrains.firebaseapp.com",
@@ -7,9 +7,8 @@ if (!firebase.apps.length) {
     };
     
         firebase.initializeApp(config);
-        
-    }
-    database = firebase.database();
+
+        let database = firebase.database();
 
 // Fill Firebase with initial data when button is clicked
 
@@ -24,7 +23,6 @@ $("#addTrain").on("click", function (event) {
         .val().trim();
     let frequency = $("#frequency")
         .val().trim();
-    ;
 
     // Make local temporary storage to operate on train data
 
@@ -68,17 +66,16 @@ let snapName = snapshot.val().name;
 let snapDestination = snapshot.val().destination;
 let snapFirstTrain = snapshot.val().firstTrain;
 let snapFrequency = snapshot.val().frequency;
-
 let timeArr= snapFirstTrain.split(":")
 let trainTime = moment().hours(timeArr[0]).minutes(timeArr[1]);
-let maxMoment = moment.max(moment(), tranTime);
+let maxMoment = moment.max(moment(), trainTime);
 let tMinutes;
 let tArrival;
 
 // If first train is later than current time, set arrival to first train time
 
 if (maxMoment === trainTime){
-    tArrival = trainTime.format("hh:mm A");
+    tArrival = trainTime.format("hh:mm");
     tMinutes = trainTime.diff(moment(),"minutes");
 } else {
     
@@ -90,7 +87,7 @@ if (maxMoment === trainTime){
 
 // Calculate arrival time of train, add tMinutes to the current time
 
-tArrival = moment().add(tMinutes, "m").format("hh:mm A");
+tArrival = moment().add(tMinutes, "m").format("hh:mm");
 
 }
 
